@@ -1,0 +1,5 @@
+Sa se citeasca afiseze din fisierul persoaneChar.txt toate persoanele cu acelasi nume prenume
+
+aici va fi citire pe char cu BufferedReader
+
+Clasa principala se va numi MainEx1CitireChar.

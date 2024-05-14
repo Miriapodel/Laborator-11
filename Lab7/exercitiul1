@@ -1,0 +1,50 @@
+Plati bancare
+
+Un Payment(clasa)are:
+amount, currency (enum), User , purpose
+
+User (clasa) are nume, prenume, iban
+Currency(enum) poate fi USD, RON, EUR, GBP, TRY
+
+interfata ConversieCalcul cu metode neimplementate
+ are o metoda de conversie valuta moneda in EUR (conversieValutaToEur)
+ are o metoda calculRata()
+
+ Se va face o clasa ConversieCalculImpl care sa implementeze ConversieCalcul.
+ Se va face ConversieCalculImpl ca si clasa adaptor (calculRata nu va fi niciodata utilizata).
+
+ Valutele sunt tinute in enum ul Currency avand formatul
+ nume_valuta("nume tara", "simbol tara")
+exemplu: RON("Romania", "RO")
+EUR("Uniunea Europeana", "UE");
+punem in enum: RON, USD, GBP, TRY (lira turceasca), EUR
+
+Tranzactie (clasa)
+contine id, Payment, currency (enum), amount, refNmb
+Tranzactie va extinde ConversieCalculImpl
+constructorul va contine id si Payment.
+In constructor se va apela metoda conversie valuta din mostenire cu ajutorul careia se vor seta amount.
+Currency va fi mereu EUR.
+
+Flow
+Userul va face o plata.
+Din plata se va produce o tranzactie.
+In prima faza refNmb este null.
+Userul face cateva plati. Pentru unele plati se razgandeste si vrea banii inapoi.
+Pentru asta se face stornare.
+
+Daca vrem stornam tranzactia:
+Pentru asta se va face o copie a tranzactiei (cu Cloneable),
+care va avea amount cu minus (inclusiv in plata), iar refNmb va fi id-ul tranzactiei originale.
+
+1) Facem mai multe plati si vor rezulta mai multe tranzactii. Cateva tranzactii le stornam.
+  Dupa stornare (nu inainte), afisam tranzactia initiala si tranzactia finala.
+2) Sa se afiseze lista tarilor/zonei pentru care s-au facut plati
+3) Sa se afiseze Tranzactiile facute pentru un user, amountul si valuta in care a platit initial.
+(se cauta in tranzactii deoarece e posibil ca unele plati sa nu fie finalizate cu tranzactie)
+
+
+
+
+
+

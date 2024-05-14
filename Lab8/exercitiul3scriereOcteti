@@ -1,0 +1,13 @@
+Cititi din streamul de intrare:
+nume
+prenume
+varsta
+suma
+valuta
+
+Daca suma > 2000 , se arunca exceptie custom si reia citirea de la capat (nu se iese din program).
+
+Campurile de mai sus se vor scrie intr un fisier numit persoaneOcteti.txt.
+Se va folosi scriere pe octeti (cu stream) si mapare in obiect (vezi serialization).
+
+Clasa principala se va numi MainEx2ScriereOcteti.
